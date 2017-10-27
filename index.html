@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<link rel="stylesheet" type="text/css" href="./css/base.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+<body>
+	<div class="header clearfix">
+		<h1 class="fl"><a href="#"><img src="images/zc-logo.png" alt=""></a></h1>
+		<ul class="fl">
+			<li><a href="#index">首页</a></li>
+			<li><a href="#introduce">公司简介</a></li>
+			<li><a href="#type">精选车型</a></li>
+			<li><a href="#need">租车须知</a></li>
+			<li><a href="#connect">联系我们</a></li>
+		</ul>
+           		 <div class="tel fl">
+           		 	<img src="images/jmicn3.png" alt="">15000000000
+           		 </div>
+	</div>
+	<div class="turn">
+		<div class="con" id="con">
+			<img src="images/text4.jpg" alt="">
+			<img src="images/text2.jpg" alt="" class="none">
+			<img src="images/banner2.jpg" alt="" class="none">
+		</div>
+		<div class="nav">
+			<ul class="myul" id="myul">
+				<li class="act"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<script src="mylib.js"></script>
+	<script>
+		var $con=document.getElementById('con');
+		var $myul=document.getElementById('myul');
+		var $conall=$con.childNodes;
+		var $myulall=$myul.childNodes;
+		var oldindex=0;
+		var delay;
+		var timer=setInterval(auto,3000);
+		function showtab(now,old){
+			oldindex=now;
+			$conall[now].style.display="block";
+			$conall[old].style.display="none";
+			$myulall[now].addClass('act');
+			$myulall[old].removeClass('act');
+		}
+		function auto(){
+			var newindex;
+			if(oldindex<$myulall.length-1){
+				newindex=oldindex+1;
+			}else{
+				newindex=0;
+			}
+			showtab(newindex,oldindex);
+		}
+		$myul.addHandler("mouseover",function(e){
+			var e=e||window.event;
+			var target=e.srcElement||e.target;
+			if(target.tagName==="LI"){
+				delay=setTimeout(function(){
+					showtab(target.index(),oldindex);
+				},1000);
+				clearInterval(timer);
+			}
+		});
+		$myul.addHandler("mouseout",function(e){
+			var e=e||window.event;
+			var target=e.srcElement||e.target;
+			if(target.tagName==="LI"){
+				clearTimeout(delay);
+				timer=setInterval(auto,3000);
+			}
+		});
+	</script>
+	<div class="detail tc">
+		<ul>
+			<li>
+				<img src="images/icon_1.png" alt="">
+				<p>100+车型</p>
+			</li>
+			<li>
+				<img src="images/icon_1.png" alt="">
+				<p>100+车型</p>
+			</li>
+			<li>
+				<img src="images/icon_1.png" alt="">
+				<p>100+车型</p>
+			</li>
+			<li>
+				<img src="images/icon_1.png" alt="">
+				<p>100+车型</p>
+			</li>
+		</ul>
+	</div>
+	<a name="introduce"></a>
+	<div class="introduce tc">
+		<ul>
+			<li>
+				<h2>短租自驾</h2>
+				<img src="images/icon.png" alt="">
+				<p>24小时轻松取/还车</p>
+			</li>
+			<li>
+				<h2>短租自驾</h2>
+				<img src="images/icon.png" alt="">
+				<p>24小时轻松取/还车</p>
+			</li>
+			<li>
+				<h2>短租自驾</h2>
+				<img src="images/icon.png" alt="">
+				<p>24小时轻松取/还车</p>
+			</li>
+			<li class="introduce-final">
+				<h2>短租自驾</h2>
+				<img src="images/icon.png" alt="">
+				<p>24小时轻松取/还车</p>
+			</li>
+		</ul>
+	</div>
+	<a name="type"></a>
+	<div class="recommend">
+		<h2 class="tc">热门车型大搜罗</h2>
+		<P class="tc recommend-title">HOT车型，实时更新随看随租，值得您关注</P>
+			<div class="recommend-content">
+				<h3>热门推荐</h3>
+				<ul>
+					<li>
+						<h4>丰田致炫</h4>
+						<p>丰田致炫/两厢/1.3自动  乘坐5人</p>
+						<a href=""><img src="images/che.png" alt=""></a>
+					</li>
+					<li>
+						<h4>丰田致炫</h4>
+						<p>丰田致炫/两厢/1.3自动  乘坐5人</p>
+						<a href=""><img src="images/che1.png" alt=""></a>
+					</li>
+					<li>
+						<h4>丰田致炫</h4>
+						<p>丰田致炫/两厢/1.3自动  乘坐5人</p>
+						<a href=""><img src="images/che2.png" alt=""></a>
+					</li>
+					<li>
+						<h4>丰田致炫</h4>
+						<p>丰田致炫/两厢/1.3自动  乘坐5人</p>
+						<a href=""><img src="images/che3.png" alt=""></a>
+					</li>
+					<li>
+						<h4>丰田致炫</h4>
+						<p>丰田致炫/两厢/1.3自动  乘坐5人</p>
+						<a href=""><img src="images/che.png" alt=""></a>
+					</li>
+					<li>
+						<h4>丰田致炫</h4>
+						<p>丰田致炫/两厢/1.3自动  乘坐5人</p>
+						<a href=""><img src="images/che.png" alt=""></a>
+					</li>
+				</ul>
+			</div>
+	</div>
+	<a name="need"></a>
+	<div class="active">
+		<h2 class="tc">优惠活动，点亮生活趁现在</h2>
+		<p class="tc active-title">多种租车模式想怎么租，就怎么租，时间与里程统统都忘掉</p>
+		<ul>
+			<li>
+				<img src="images/ac1.jpg" alt="">
+				<div class="active-box">
+					<h3>新用户请留步 150元请收下</h3>
+					<p>连环送券 租车直抵</p>
+					<p>专享特惠 只送给你</p>
+				</div>
+			</li>
+			<li>
+				<img src="images/ac2.jpg" alt="">
+				<div class="active-box">
+					<h3>新用户请留步 150元请收下</h3>
+					<p>连环送券 租车直抵</p>
+					<p>专享特惠 只送给你</p>
+				</div>
+			</li>
+			<li>
+				<img src="images/ac3.jpg" alt="">
+				<div class="active-box">
+					<h3>新用户请留步 150元请收下</h3>
+					<p>连环送券 租车直抵</p>
+					<p>专享特惠 只送给你</p>
+				</div>
+			</li>
+			<li>
+				<img src="images/ac4.jpg" alt="">
+				<div class="active-box">
+					<h3>新用户请留步 150元请收下</h3>
+					<p>连环送券 租车直抵</p>
+					<p>专享特惠 只送给你</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<a name='connect'></a>
+	<div class="map-box">
+	<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+  <!--百度地图容器-->
+  <div id="dituContent" class="dituContent"></div>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(116.32953,39.911393);//定义一个中心点坐标
+        map.centerAndZoom(point,12);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+    
+    
+    initMap();//创建和初始化地图
+</script>
+<div class="map-content">
+	<ul>
+                        <li>湖南省沅江市巴山西路105号百合车站</li>
+                        <li>0737-2708333</li>
+                        <li>0737zuche.com</li>
+             </ul>
+</div>
+</div>
+<div class="footer">
+	<div class="linkother-box">	
+		<div class="linkother">
+			<h3>友情链接</h3>
+			<ul>
+				<li><a href="www.baidu.com">百度</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+				<li><a href="#">友情链接</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="copyer">©2017 沅江市嘉诚汽车租赁服务有限公司 版权所有</div>	
+</div>
+</body>
+</html>
